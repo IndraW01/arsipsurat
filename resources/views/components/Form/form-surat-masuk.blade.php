@@ -56,7 +56,7 @@
     <div class="form-row">
         <div class="form-group col-md-6">
             <label for="tanggal_masuk">Tanggal Masuk</label>
-            <input type="date" class="form-control @error('tanggal_masuk') is-invalid @enderror" name="tanggal_masuk" id="tanggal_masuk" value="{{  old('tanggal_masuk', $suratMasuk->tanggal_masuk ?? Carbon\Carbon::now()->isoFormat('YYYY-MM-DD')) }}">
+            <input type="date" class="form-control @error('tanggal_masuk') is-invalid @enderror" name="tanggal_masuk" id="tanggal_masuk" value="{{  old('tanggal_masuk', $suratMasuk->tanggal_masuk ?? Carbon\Carbon::now()->isoFormat('YYYY-MM-DD') ?? '') }}">
             @error('tanggal_masuk')
                 <div class="invalid-feedback">
                     {{ $message }}
@@ -65,7 +65,7 @@
         </div>
         <div class="form-group col-md-6">
             <label for="tanggal_diterima">Tanggal Diterima</label>
-            <input type="date" class="form-control @error('tanggal_diterima') is-invalid @enderror" name="tanggal_diterima" id="tanggal_diterima" value="{{ old('tanggal_diterima', $suratMasuk->tanggal_diterima ?? Carbon\Carbon::now()->isoFormat('YYYY-MM-DD')) }}">
+            <input type="date" class="form-control @error('tanggal_diterima') is-invalid @enderror" name="tanggal_diterima" id="tanggal_diterima" value="{{ old('tanggal_diterima', $suratMasuk->tanggal_diterima ?? Carbon\Carbon::now()->isoFormat('YYYY-MM-DD') ?? '') }}">
             @error('tanggal_diterima')
                 <div class="invalid-feedback">
                     {{ $message }}

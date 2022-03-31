@@ -19,7 +19,7 @@ class FormSuratMasuk extends Component
      */
     public function __construct($suratMasuk = null, $uri, $method = null, $aksi = null)
     {
-        $this->suratMasuk = $suratMasuk ?? '';
+        $this->suratMasuk = $suratMasuk ?? false;
         $this->uri = $uri;
         $this->method = $method ?? 'POST';
         $this->aksi = $aksi ?? "Tambah";
@@ -32,7 +32,6 @@ class FormSuratMasuk extends Component
      */
     public function render()
     {
-        // dd(request()->route('surat_masuk'));
         return view('components.form.form-surat-masuk', [
             'units' => Unit::orderBy('nama_unit')->get()
         ]);

@@ -7,7 +7,7 @@
             <h6 class="m-0 font-weight-bold text-primary">Tambah Unit</h6>
         </div>
         <div class="card-body">
-            <x-form.form-unit uri="{{ route('unit.store') }}" />
+            <x-form.form-unit uri="{{ route('unit.store') }}" :unit=null />
         </div>
     </div>
 

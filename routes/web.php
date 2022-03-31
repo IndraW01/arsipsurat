@@ -11,11 +11,11 @@ Auth::routes(['reset' => false, 'confirm' => false]);
 
 Route::get('/', [HomeController::class, 'index'])->name('home')->middleware('auth');
 
-Route::post('surat-masuk/{surat_masuk:judul_suratmasuk}', [SuratMasukController::class, 'download'])->name('surat.masuk.download');
-Route::resource('surat-masuk', SuratMasukController::class)->names('surat.masuk')->scoped(['surat_masuk' => 'judul_suratmasuk']);
+Route::post('surat-masuk/{surat_masuk:judul_suratmasuk}', [SuratMasukController::class, 'download'])->name('surat.masuk.download')->middleware('auth');
+Route::resource('surat-masuk', SuratMasukController::class)->names('surat.masuk')->scoped(['surat_masuk' => 'judul_suratmasuk'])->middleware('auth');
 
-Route::post('surat-keluar/{surat_keluar:judul_suratkeluar}', [SuratKeluarController::class, 'download'])->name('surat.keluar.download');
-Route::resource('surat-keluar', SuratKeluarController::class)->names('surat.keluar')->scoped(['surat_keluar' => 'judul_suratkeluar']);
+Route::post('surat-keluar/{surat_keluar:judul_suratkeluar}', [SuratKeluarController::class, 'download'])->name('surat.keluar.download')->middleware('auth');
+Route::resource('surat-keluar', SuratKeluarController::class)->names('surat.keluar')->scoped(['surat_keluar' => 'judul_suratkeluar'])->middleware('auth');
 
-Route::resource('unit', UnitController::class)->names('unit')->except('show')->scoped(['unit' => 'kode_unit']);
+Route::resource('unit', UnitController::class)->names('unit')->except('show')->scoped(['unit' => 'kode_unit'])->middleware('auth');
 

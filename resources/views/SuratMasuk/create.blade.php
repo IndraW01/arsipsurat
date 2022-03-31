@@ -7,7 +7,7 @@
             <h6 class="m-0 font-weight-bold text-primary">Tambah Surat Masuk</h6>
         </div>
         <div class="card-body">
-            <x-form.form-surat-masuk uri="{{ route('surat.masuk.store') }}" />
+            <x-form.form-surat-masuk uri="{{ route('surat.masuk.store') }}" :surat-masuk=null />
         </div>
     </div>
 

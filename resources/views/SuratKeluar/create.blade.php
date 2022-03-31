@@ -7,7 +7,7 @@
             <h6 class="m-0 font-weight-bold text-primary">Tambah Surat Keluar</h6>
         </div>
         <div class="card-body">
-            <x-form.form-surat-keluar uri="{{ route('surat.keluar.store') }}" />
+            <x-form.form-surat-keluar uri="{{ route('surat.keluar.store') }}" :surat-keluar=null />
         </div>
     </div>
 
